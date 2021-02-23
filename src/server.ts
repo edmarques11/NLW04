@@ -1,12 +1,11 @@
-import express, { json } from "express";
+import "reflect-metadata";
+import express from "express";
+import "./database";
+import { router } from "./routes";
+
 const app = express();
+app.use(express.json());
 
-app.get("/", (request, response) => {
-  return response.json({ message: "Hello world - NLW04" });
-});
-
-app.post("/users", (request, response) => {
-  return response.json({ message: "user saved!" });
-});
+app.use(router);
 
 app.listen(3333, () => console.log("server is running!"));
