@@ -2,7 +2,7 @@ import fs from "fs";
 import handlebars from "handlebars";
 import nodemailer, { Transporter } from "nodemailer";
 
-class SendEmailService {
+class SendMailService {
   private client: Transporter;
 
   constructor() {
@@ -41,4 +41,4 @@ class SendEmailService {
   }
 }
 
-export default new SendEmailService();
+export default new SendMailService();
